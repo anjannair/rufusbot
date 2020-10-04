@@ -68,7 +68,29 @@
           &nbsp;
           <p class="lead mb-0"> </p>
           <h7>• KICK</h7>
-          <p class="lead mb-0">*kick @USER - Kicks the user from the server</p>
+          <p class="lead mb-0">*kick @USER - Kicks the user from the server</p><div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('kickalias'))">Alias</button></div>
+          <script>window.smoothScroll = function(target) {
+            var scrollContainer = target;
+            do { //find scroll container
+                scrollContainer = scrollContainer.parentNode;
+                if (!scrollContainer) return;
+                scrollContainer.scrollTop += 1;
+            } while (scrollContainer.scrollTop == 0);
+        
+            var targetY = 0;
+            do { //find the top of target relatively to the container
+                if (target == scrollContainer) break;
+                targetY += target.offsetTop;
+            } while (target = target.offsetParent);
+        
+            scroll = function(c, a, b, i) {
+                i++; if (i > 30) return;
+                c.scrollTop = a + (b - a) / 30 * i;
+                setTimeout(function(){ scroll(c, a, b, i); }, 20);
+            }
+            // start scrolling
+            scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+        }</script>
           &nbsp;
           <p class="lead mb-0"> </p>
           <h7>• WARN</h7>
@@ -76,15 +98,15 @@
           &nbsp;
           <p class="lead mb-0"> </p>
           <h7>• PRUNE</h7>
-          <p class="lead mb-0">*prune NUMBER - Clears the number of messages</p>
+          <p class="lead mb-0">*prune NUMBER - Clears the number of messages</p><div class="prune"><button type="button" onclick="smoothScroll(document.getElementById('prunealias'))">Aliases</button></div>
           &nbsp;
           <p class="lead mb-0"></p>
           <h7>• ADD ROLE</h7>
-          <p class="lead mb-0">*addrole @USER @ROLE - Add a role for a user</p>
+          <p class="lead mb-0">*addrole @USER @ROLE - Add a role for a user</p><div class="addrole"><button type="button" onclick="smoothScroll(document.getElementById('aralias'))">Alias</button></div>
           &nbsp;
           <p class="lead mb-0"></p>
           <h7>• MUTE</h7>
-          <p class="lead mb-0">*mute - Mutes everyone in the voice channel</p>
+          <p class="lead mb-0">*mute - Mutes everyone in the voice channel</p><div class="mute"><button type="button" onclick="smoothScroll(document.getElementById('muteall'))">Aliases</button></div>
           &nbsp;
           <p class="lead mb-0">*unmute - Unmutes everyone in the voice channel</p>
           &nbsp;
@@ -184,6 +206,25 @@
           <p class="lead mb-0">*cat - A random AI generated cat is sent</p>
           &nbsp;
           <p class="lead mb-0">*gif SEARCH - GIF search from Tenor</p>
+          &nbsp;
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <h7>•ALIASES</h7>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">KICK</p>
+          <div class="kickalias" id="kickalias">*remove @USER</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">PRUNE</p>
+          <div class="prunealias" id="prunealias">*clear @NUMBER</div>
+          <div class="prunealias" id="prunealias">*clean @NUMBER</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">ADD ROLE</p>
+          <div class="aralias" id="aralias">*ar @USER @ROLE</div>
         </div>
       </div>
     </div>
