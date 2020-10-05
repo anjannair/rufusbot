@@ -59,6 +59,17 @@
           <h1>COMMANDS</h1>
           <p class="lead mb-0">The default prefix is *</p>
           &nbsp;
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">Legends:</p>
+          <p class="lead mb-0">@USER - Mention the user</p>
+          <p class="lead mb-0">@ROLE - Mention the role</p>
+          <p class="lead mb-0">SEARCH - Mention what to search for</p>
+          <p class="lead mb-0">NUMBER - Enter a number</p>
+          <p class="lead mb-0">QUESTION - Ask a question</p>
+          &nbsp;
+          <p class="lead mb-0"></p>
+          &nbsp;
           <h5>FOR MODERATORS:</h5>
           <p class="lead mb-0"> </p>
           &nbsp;
@@ -68,7 +79,8 @@
           &nbsp;
           <p class="lead mb-0"> </p>
           <h7>• KICK</h7>
-          <p class="lead mb-0">*kick @USER - Kicks the user from the server</p><div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('kickalias'))">Alias</button></div>
+          <p class="lead mb-0">*kick @USER - Kicks the user from the server</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('kickalias'))">Alias</button></div>
           <script>window.smoothScroll = function(target) {
             var scrollContainer = target;
             do { //find scroll container
@@ -98,31 +110,41 @@
           &nbsp;
           <p class="lead mb-0"> </p>
           <h7>• PRUNE</h7>
-          <p class="lead mb-0">*prune NUMBER - Clears the number of messages</p><div class="prune"><button type="button" onclick="smoothScroll(document.getElementById('prunealias'))">Aliases</button></div>
+          <p class="lead mb-0">*prune NUMBER - Clears the number of messages</p>
+          <div class="prune"><button type="button" onclick="smoothScroll(document.getElementById('prunealias'))">Aliases</button></div>
           &nbsp;
           <p class="lead mb-0"></p>
           <h7>• ADD ROLE</h7>
-          <p class="lead mb-0">*addrole @USER @ROLE - Add a role for a user</p><div class="addrole"><button type="button" onclick="smoothScroll(document.getElementById('aralias'))">Alias</button></div>
+          <p class="lead mb-0">*addrole @USER @ROLE - Add a role for a user</p>
+          <div class="addrole"><button type="button" onclick="smoothScroll(document.getElementById('aralias'))">Alias</button></div>
           &nbsp;
           <p class="lead mb-0"></p>
           <h7>• MUTE</h7>
-          <p class="lead mb-0">*mute - Mutes everyone in the voice channel</p><div class="mute"><button type="button" onclick="smoothScroll(document.getElementById('muteall'))">Aliases</button></div>
+          <p class="lead mb-0">*mute - Mutes everyone in the voice channel</p>
+          <div class="mute"><button type="button" onclick="smoothScroll(document.getElementById('muteall'))">Aliases</button></div>
           &nbsp;
           <p class="lead mb-0">*unmute - Unmutes everyone in the voice channel</p>
+          <div class="unmute"><button type="button" onclick="smoothScroll(document.getElementById('unmuteall'))">Alias</button></div>
           &nbsp;
           <p class="lead mb-0">*fmute @USER - Force mutes mentioned user</p>
+          <div class="fmute"><button type="button" onclick="smoothScroll(document.getElementById('fmuteone'))">Aliases</button></div>
           &nbsp;
           <p class="lead mb-0">*funmute @USER - Force unmutes mentioned user</p>
+          <div class="funmute"><button type="button" onclick="smoothScroll(document.getElementById('funmuteone'))">Alias</button></div>
           &nbsp;
           <p class="lead mb-0"></p>
           <h7>• DEAFEN</h7>
           <p class="lead mb-0">*deafen - Deafens all the users in the voice channel</p>
+          <div class="deafen"><button type="button" onclick="smoothScroll(document.getElementById('deafenall'))">Aliases</button></div>
           &nbsp;
           <p class="lead mb-0">*undeafen - Undeafens all the users in the voice channel</p>
+          <div class="undeafen"><button type="button" onclick="smoothScroll(document.getElementById('undeafenall'))">Aliases</button></div>
           &nbsp;
           <p class="lead mb-0">*fdeafen @USER - Deafens only mentioned user in channel</p>
+          <div class="forcedeafen"><button type="button" onclick="smoothScroll(document.getElementById('forcedeafen'))">Aliases</button></div>
           &nbsp;
           <p class="lead mb-0">*fundeafen @USER - Undeafens the mentioned user in the channel</p>
+          <div class="forceundeafen"><button type="button" onclick="smoothScroll(document.getElementById('forceundeafen'))">Aliases</button></div>
           &nbsp;
           <p class="lead mb-0"> </p>
           <h5>MANUALS FOR NEWBIES:</h5>
@@ -164,12 +186,16 @@
           <p class="lead mb-0">*8ball QUESTION - Ask <a href="https://en.wikipedia.org/wiki/Magic_8-Ball">8ball</a> your question</p>
           &nbsp;
           <p class="lead mb-0">*memes - A random meme from reddit!!</p>
+          <div class="meme"><button type="button" onclick="smoothScroll(document.getElementById('meme'))">Alias</button></div>
           &nbsp;
           <p class="lead mb-0">*amongus maps - HD maps for Among Us</p>
+          <div class="aumap"><button type="button" onclick="smoothScroll(document.getElementById('aumap'))">Aliases</button></div>
           &nbsp;
           <p class="lead mb-0">*amongus info - Very good informative articles for Among Us</p>
+          <div class="auinfo"><button type="button" onclick="smoothScroll(document.getElementById('auinfo'))">Aliases</button></div>
           &nbsp;
           <p class="lead mb-0">*amongus wiki - Search the Among Us wiki</p>
+          <div class="auwiki"><button type="button" onclick="smoothScroll(document.getElementById('auwiki'))">Aliases</button></div>
           &nbsp;
           <p class="lead mb-0"> </p>
           &nbsp;
@@ -193,7 +219,7 @@
           &nbsp;
           <p class="lead mb-0">*dev - The developer of the bot is shown</p>
           &nbsp;
-          <p class="lead mb-0">*tutorial - All of the above in a glance</p>
+          <p class="lead mb-0">*help - All of the above in a glance</p>
           &nbsp;
           <p class="lead mb-0">*nasa SEARCH - Search the NASA website</p>
           &nbsp;
@@ -225,6 +251,70 @@
           &nbsp;
           <p class="lead mb-0">ADD ROLE</p>
           <div class="aralias" id="aralias">*ar @USER @ROLE</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">MUTE ALL</p>
+          <div class="muteall" id="muteall">*m</div>
+          <div class="muteall" id="muteall">*mu</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">UNMUTE ALL</p>
+          <div class="unmuteall" id="unmuteall">*um</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">MUTE ONE USER</p>
+          <div class="fmuteone" id="fmuteone">*forcemute @USER</div>
+          <div class="fmuteone" id="fmuteone">*fm @USER</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">UNMUTE ONE USER</p>
+          <div class="funmuteone" id="funmuteone">*fum @USER</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">DEAFEN ALL</p>
+          <div class="deafenall" id="deafenall">*deaf</div>
+          <div class="deafenall" id="deafenall">*de</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">UNDEAFEN ALL</p>
+          <div class="undeafenall" id="undeafenall">*undeaf</div>
+          <div class="undeafenall" id="undeafenall">*unde</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">DEAFEN ONE USER</p>
+          <div class="forcedeafen" id="forcedeafen">*forcedeafen @USER</div>
+          <div class="forcedeafen" id="forcedeafen">*fd @USER</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">UNDEAFEN ONE USER</p>
+          <div class="forceundeafen" id="forceundeafen">*forceundeafen @USER</div>
+          <div class="forceundeafen" id="forceundeafen">*fund @USER</div>
+          <div class="forceundeafen" id="forceundeafen">*fud @USER</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">MEMES</p>
+          <div class="meme" id="meme">*meme</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">AMONG US MAPS</p>
+          <div class="aumap" id="aumap">*au maps</div>
+          <div class="aumap" id="aumap">*au map</div>
+          <div class="aumap" id="aumap">*am maps</div>
+          <div class="aumap" id="aumap">*am map</div>
+          <div class="aumap" id="aumap">*amongus map</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">AMONG US INFO</p>
+          <div class="auinfo" id="auinfo">*au information</div>
+          <div class="auinfo" id="auinfo">*au among us information</div>
+          <div class="auinfo" id="auinfo">*am information</div>
+          <div class="auinfo" id="auinfo">*am among us information</div>
+          <div class="auinfo" id="auinfo">*amongus information</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">AMONG US WIKI</p>
+          <div class="auwiki" id="auwiki">*auwiki SEARCH</div>
+          <div class="auwiki" id="auwiki">*amwiki SEARCH</div>
         </div>
       </div>
     </div>
