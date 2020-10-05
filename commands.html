@@ -59,6 +59,17 @@
           <h1>COMMANDS</h1>
           <p class="lead mb-0">The default prefix is *</p>
           &nbsp;
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0">Legends:</p>
+          <p class="lead mb-0">@USER - Mention the user</p>
+          <p class="lead mb-0">@ROLE - Mention the role</p>
+          <p class="lead mb-0">SEARCH - Mention what to search for</p>
+          <p class="lead mb-0">NUMBER - Enter a number</p>
+          <p class="lead mb-0">QUESTION - Ask a question</p>
+          &nbsp;
+          <p class="lead mb-0"></p>
+          &nbsp;
           <h5>FOR MODERATORS:</h5>
           <p class="lead mb-0"> </p>
           &nbsp;
@@ -68,7 +79,30 @@
           &nbsp;
           <p class="lead mb-0"> </p>
           <h7>• KICK</h7>
-          <p class="lead mb-0">*kick @USER - Kicks the user from the server</p>
+          <p class="lead mb-0" id="kick1">*kick @USER - Kicks the user from the server</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('kickalias'))">Alias</button></div>
+          <script>window.smoothScroll = function(target) {
+            var scrollContainer = target;
+            do { //find scroll container
+                scrollContainer = scrollContainer.parentNode;
+                if (!scrollContainer) return;
+                scrollContainer.scrollTop += 1;
+            } while (scrollContainer.scrollTop == 0);
+        
+            var targetY = 0;
+            do { //find the top of target relatively to the container
+                if (target == scrollContainer) break;
+                targetY += target.offsetTop;
+            } while (target = target.offsetParent);
+        
+            scroll = function(c, a, b, i) {
+                i++; if (i > 30) return;
+                c.scrollTop = a + (b - a) / 30 * i;
+                setTimeout(function(){ scroll(c, a, b, i); }, 20);
+            }
+            // start scrolling
+            scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+        }</script>
           &nbsp;
           <p class="lead mb-0"> </p>
           <h7>• WARN</h7>
@@ -76,9 +110,41 @@
           &nbsp;
           <p class="lead mb-0"> </p>
           <h7>• PRUNE</h7>
-          <p class="lead mb-0">*prune NUMBER - Clears the number of messages</p>
+          <p class="lead mb-0" id="prune1">*prune NUMBER - Clears the number of messages</p>
+          <div class="prune"><button type="button" onclick="smoothScroll(document.getElementById('prunealias'))">Aliases</button></div>
           &nbsp;
-          <p class="lead mb-0"> </p>
+          <p class="lead mb-0"></p>
+          <h7>• ADD ROLE</h7>
+          <p class="lead mb-0" id="ar1">*addrole @USER @ROLE - Add a role for a user</p>
+          <div class="addrole"><button type="button" onclick="smoothScroll(document.getElementById('aralias'))">Alias</button></div>
+          &nbsp;
+          <p class="lead mb-0"></p>
+          <h7>• MUTE</h7>
+          <p class="lead mb-0" id="mute1">*mute - Mutes everyone in the voice channel</p>
+          <div class="mute"><button type="button" onclick="smoothScroll(document.getElementById('muteall'))">Aliases</button></div>
+          &nbsp;
+          <p class="lead mb-0" id="unmute1">*unmute - Unmutes everyone in the voice channel</p>
+          <div class="unmute"><button type="button" onclick="smoothScroll(document.getElementById('unmuteall'))">Alias</button></div>
+          &nbsp;
+          <p class="lead mb-0" id="mute2">*fmute @USER - Force mutes mentioned user</p>
+          <div class="fmute"><button type="button" onclick="smoothScroll(document.getElementById('fmuteone'))">Aliases</button></div>
+          &nbsp;
+          <p class="lead mb-0" id="unmute2">*funmute @USER - Force unmutes mentioned user</p>
+          <div class="funmute"><button type="button" onclick="smoothScroll(document.getElementById('funmuteone'))">Alias</button></div>
+          &nbsp;
+          <p class="lead mb-0"></p>
+          <h7>• DEAFEN</h7>
+          <p class="lead mb-0" id="deafen1">*deafen - Deafens all the users in the voice channel</p>
+          <div class="deafen"><button type="button" onclick="smoothScroll(document.getElementById('deafenall'))">Aliases</button></div>
+          &nbsp;
+          <p class="lead mb-0" id="undeafen1">*undeafen - Undeafens all the users in the voice channel</p>
+          <div class="undeafen"><button type="button" onclick="smoothScroll(document.getElementById('undeafenall'))">Aliases</button></div>
+          &nbsp;
+          <p class="lead mb-0" id="deafen2">*fdeafen @USER - Deafens only mentioned user in channel</p>
+          <div class="forcedeafen"><button type="button" onclick="smoothScroll(document.getElementById('forcedeafen'))">Aliases</button></div>
+          &nbsp;
+          <p class="lead mb-0" id="undeafen2">*fundeafen @USER - Undeafens the mentioned user in the channel</p>
+          <div class="forceundeafen"><button type="button" onclick="smoothScroll(document.getElementById('forceundeafen'))">Aliases</button></div>
           &nbsp;
           <p class="lead mb-0"> </p>
           <h5>MANUALS FOR NEWBIES:</h5>
@@ -90,30 +156,6 @@
           &nbsp;
           <p class="lead mb-0">*rythm</p>
           &nbsp;
-          <p class="lead mb-0">+p SONG_NAME : Replace SONG_NAME with the one to play</p>
-          &nbsp;
-          <p class="lead mb-0">+fs : Force skips the song</p>
-          &nbsp;
-          <p class="lead mb-0">+skip : Skips the song after taking a vote</p>
-          &nbsp;
-          <p class="lead mb-0">+q : View the queue of songs</p>
-          &nbsp;
-          <p class="lead mb-0">+shuffle : Shuffles the queue</p>
-          &nbsp;
-          <p class="lead mb-0">+lyrics : Provides the lyrics of the song</p>
-          &nbsp;
-          <p class="lead mb-0">+np : Shows what the bot is currently playing</p>
-          &nbsp;
-          <p class="lead mb-0">+seek : Goes to a particular timestamp of the song</p>
-          &nbsp;
-          <p class="lead mb-0">+stop : Stops the song</p>
-          &nbsp;
-          <p class="lead mb-0">+pause : Pauses the song</p>
-          &nbsp;
-          <p class="lead mb-0">+resume : Resumes the song after pausing it</p>
-          &nbsp;
-          <p class="lead mb-0">+loop : Loops the current song</p>
-          &nbsp;
           <p class="lead mb-0"> </p>
           &nbsp;
           &nbsp;
@@ -123,30 +165,6 @@
           &nbsp;
           <p class="lead mb-0">*dankbot</p>
           &nbsp;
-          <p class="lead mb-0">pls meme : Sends a random meme</p>
-          &nbsp;
-          <p class="lead mb-0">pls wholesome : Sends a wholesome meme</p>
-          &nbsp;
-          <p class="lead mb-0">pls pun : Sends a pun</p>
-          &nbsp;
-          <p class="lead mb-0">pls 4chan: A random 4chan quote/meme</p>
-          &nbsp;
-          <p class="lead mb-0">pls antijoke : Sends a non joke text</p>
-          &nbsp;
-          <p class="lead mb-0">pls antiantijoke : Yes you read it right, it's a joke</p>
-          &nbsp;
-          <p class="lead mb-0">pls xkcd : Grabs a random comic from the xkcd website</p>
-          &nbsp;
-          <p class="lead mb-0">pls create : Create a meme using this bot</p>
-          &nbsp;
-          <p class="lead mb-0">pls discordmeme : Sends a random discord themed meme</p>
-          &nbsp;
-          <p class="lead mb-0">pls meirl : Sends a post that you can relate to (well...sometimes)</p>
-          &nbsp;
-          <p class="lead mb-0">For more commands check <a href="https://dankmemer.lol/commands">here</a></p>
-          &nbsp;
-          <p class="lead mb-0"> </p>
-          &nbsp;
           <p class="lead mb-0"> </p>
           &nbsp;
           <p class="lead mb-0"> </p>
@@ -154,12 +172,6 @@
           <p class="lead mb-0"> </p>
           &nbsp;
           <p class="lead mb-0">*discord</p>
-          &nbsp;
-          <p class="lead mb-0">Watch this video to get a better idea on how discord works</p>
-          &nbsp;
-          <p class="lead mb-0"> </p>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/dvHgASyhPSY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <p class="lead mb-0"> </p>
           &nbsp;
           <p class="lead mb-0"> </p>
           &nbsp;
@@ -173,7 +185,17 @@
           &nbsp;
           <p class="lead mb-0">*8ball QUESTION - Ask <a href="https://en.wikipedia.org/wiki/Magic_8-Ball">8ball</a> your question</p>
           &nbsp;
-          <p class="lead mb-0">*memes - A random meme from reddit!!</p>
+          <p class="lead mb-0" id="meme1">*memes - A random meme from reddit!!</p>
+          <div class="meme"><button type="button" onclick="smoothScroll(document.getElementById('meme'))">Alias</button></div>
+          &nbsp;
+          <p class="lead mb-0" id="aumap1">*amongus maps - HD maps for Among Us</p>
+          <div class="aumap"><button type="button" onclick="smoothScroll(document.getElementById('aumap'))">Aliases</button></div>
+          &nbsp;
+          <p class="lead mb-0" id="auinfo1">*amongus info - Very good informative articles for Among Us</p>
+          <div class="auinfo"><button type="button" onclick="smoothScroll(document.getElementById('auinfo'))">Aliases</button></div>
+          &nbsp;
+          <p class="lead mb-0" id="auwiki1">*amongus wiki - Search the Among Us wiki</p>
+          <div class="auwiki"><button type="button" onclick="smoothScroll(document.getElementById('auwiki'))">Aliases</button></div>
           &nbsp;
           <p class="lead mb-0"> </p>
           &nbsp;
@@ -183,6 +205,8 @@
           <p class="lead mb-0">*catfact - A random catfact!</p>
           &nbsp;
           <p class="lead mb-0">*fact - A random fact on numbers</p>
+          &nbsp;
+          <p class="lead mb-0">*interesting - An interesting fact fetched from Reddit</p>
           &nbsp;
           <p class="lead mb-0"> </p>
           &nbsp;
@@ -195,7 +219,117 @@
           &nbsp;
           <p class="lead mb-0">*dev - The developer of the bot is shown</p>
           &nbsp;
-          <p class="lead mb-0">*tutorial - All of the above in a glance</p>
+          <p class="lead mb-0">*help - All of the above in a glance</p>
+          &nbsp;
+          <p class="lead mb-0">*nasa SEARCH - Search the NASA website</p>
+          &nbsp;
+          <p class="lead mb-0">*img SEARCH - Send random images (NSFW is excluded)</p>
+          &nbsp;
+          <p class="lead mb-0">*person - A random AI generated face is sent of a human</p>
+          &nbsp;
+          <p class="lead mb-0">*rimage - A random AI generated art/image is sent</p>
+          &nbsp;
+          <p class="lead mb-0">*cat - A random AI generated cat is sent</p>
+          &nbsp;
+          <p class="lead mb-0">*gif SEARCH - GIF search from Tenor</p>
+          &nbsp;
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <h7>•ALIASES</h7>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0" id="kickalias">KICK</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('kick1'))">Go Back</button></div>
+          <div class="kickalias">*remove @USER</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0" id="prunealias">PRUNE</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('prune1'))">Go Back</button></div>
+          <div class="prunealias">*clear @NUMBER</div>
+          <div class="prunealias">*clean @NUMBER</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0" id="aralias">ADD ROLE</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('ar1'))">Go Back</button></div>
+          <div class="aralias">*ar @USER @ROLE</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0" id="muteall">MUTE ALL</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('mute1'))">Go Back</button></div>
+          <div class="muteall">*m</div>
+          <div class="muteall">*mu</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0" id="unmuteall">UNMUTE ALL</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('unmute1'))">Go Back</button></div>
+          <div class="unmuteall">*um</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0" id="fmuteone">MUTE ONE USER</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('mute2'))">Go Back</button></div>
+          <div class="fmuteone">*forcemute @USER</div>
+          <div class="fmuteone">*fm @USER</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0" id="funmuteone">UNMUTE ONE USER</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('unmute2'))">Go Back</button></div>
+          <div class="funmuteone">*fum @USER</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0" id="deafenall">DEAFEN ALL</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('deafen1'))">Go Back</button></div>
+          <div class="deafenall">*deaf</div>
+          <div class="deafenall">*de</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0" id="undeafenall">UNDEAFEN ALL</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('undeafen1'))">Go Back</button></div>
+          <div class="undeafenall">*undeaf</div>
+          <div class="undeafenall">*unde</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0" id="forcedeafen">DEAFEN ONE USER</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('deafen2'))">Go Back</button></div>
+          <div class="forcedeafen">*forcedeafen @USER</div>
+          <div class="forcedeafen">*fd @USER</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0" id="forceundeafen">UNDEAFEN ONE USER</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('undeafen2'))">Go Back</button></div>
+          <div class="forceundeafen">*forceundeafen @USER</div>
+          <div class="forceundeafen">*fund @USER</div>
+          <div class="forceundeafen">*fud @USER</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0" id="meme">MEMES</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('meme1'))">Go Back</button></div>
+          <div class="meme">*meme</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0" id="aumap">AMONG US MAPS</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('aumap1'))">Go Back</button></div>
+          <div class="aumap">*au maps</div>
+          <div class="aumap">*au map</div>
+          <div class="aumap">*am maps</div>
+          <div class="aumap">*am map</div>
+          <div class="aumap">*amongus map</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0" id="auinfo">AMONG US INFO</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('auinfo1'))">Go Back</button></div>
+          <div class="auinfo">*au information</div>
+          <div class="auinfo">*au among us information</div>
+          <div class="auinfo">*am information</div>
+          <div class="auinfo">*am among us information</div>
+          <div class="auinfo">*amongus information</div>
+          <p class="lead mb-0"></p>
+          &nbsp;
+          <p class="lead mb-0" id="auwiki">AMONG US WIKI</p>
+          <div class="kick"><button type="button" onclick="smoothScroll(document.getElementById('auwiki1'))">Go Back</button></div>
+          <div class="auwiki">*auwiki SEARCH</div>
+          <div class="auwiki">*amwiki SEARCH</div>
         </div>
       </div>
     </div>
